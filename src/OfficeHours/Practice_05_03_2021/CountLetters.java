@@ -19,6 +19,7 @@ public class CountLetters {
             }
         }
         System.out.println(targetLetter + " was found " + count + " times");
+        System.out.println(count + "" + targetLetter);
 
     }
 }
