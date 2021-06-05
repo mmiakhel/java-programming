@@ -12,5 +12,6 @@ public class AnimalObjects {
 
         Dog dog = new Dog();
         dog.speak();
+        System.out.println();
     }
 }
