@@ -2,29 +2,38 @@ package repl_practice;
 import java.util.*;
 
 public class Practice {
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        System.out.println(countLetters(in.next()));
+    public static boolean isAnagram(String word1, String word2) {
+
+        word1 = word1.toLowerCase().replace(" ", "");
+        word2 = word2.toLowerCase().replace(" ", "");
+
+        char[] word1Char = word1.toCharArray();
+        char[] word2Char = word2.toCharArray();
+
+        Arrays.sort(word1Char);
+        Arrays.sort(word2Char);
+
+        if(Arrays.equals(word1Char, word2Char)) {
+            return true;
+        } else {
+            return false;
+        }
+
+
+
+
+
+
+
+
     }
 
-    public static String countLetters(String str) {
-        String result = "";
+    // Do not touch below
 
-        for (int i = 0; i < str.length(); i++) {
-            if (!result.contains("" + str.charAt(i))) {
-                int count = 0;
-                for (int j = 0; j < str.length(); j++) {
-                    if (str.charAt(i) == str.charAt(j)) {
-                        count++;
-                    } else {
 
-                    }
-                }
-                result += "" + count + str.charAt(i);
-            }
-
-        }
-        return result;
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println(isAnagram(in.nextLine(), in.nextLine()));
     }
 
 }
