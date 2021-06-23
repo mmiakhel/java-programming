@@ -2,41 +2,39 @@ package repl_practice;
 import java.util.*;
 
 public class Practice {
-    public static boolean isAnagram(String word1, String word2) {
+    public static int[] mergR(int[] a,int[] b) {
+        int length = a.length + b.length;
+        int itr = 0;
+        int[] arr = new int[length];
 
-        word1 = word1.toLowerCase().replace(" ", "");
-        word2 = word2.toLowerCase().replace(" ", "");
-
-        char[] word1Char = word1.toCharArray();
-        char[] word2Char = word2.toCharArray();
-
-        Arrays.sort(word1Char);
-        Arrays.sort(word2Char);
-
-        if(Arrays.equals(word1Char, word2Char)) {
-            return true;
-        } else {
-            return false;
+        for (int i = 0; i < a.length; i++) {
+            arr[itr] = a[i];
+            itr++;
         }
+        for (int i = 0; i < b.length; i++) {
+            arr[itr] = b[i];
+            itr++;
+        }
+       return arr;
 
 
-
-
-
-
-
-
-    }
-
-    // Do not touch below
-
+    }//end mergR
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        System.out.println(isAnagram(in.nextLine(), in.nextLine()));
-    }
+        int [] nums = new int[in.nextInt()];
+        int [] nums2 = new int[in.nextInt()];
+        for(int i=0; i < nums.length; i++) {
+            nums[i] = in.nextInt();
+        }
+        for(int i=0; i < nums2.length; i++) {
+            nums2[i] = in.nextInt();
+        }
 
+        System.out.println(Arrays.toString(mergR(nums, nums2)));
+    }
 }
+
 
 
 
